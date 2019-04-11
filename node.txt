@@ -1,0 +1,39 @@
+1.webpack 入门基础 的使用
+
+01. 先初始化一个webpack.json文件   npm init -y
+02. 安装webpack ，不要全局安装用的时候在安装 npm i -D webpack 
+    安装完成之后，会在package.json里添加这个 
+    //开发环境依赖
+   "devDependencies": {
+    "webpack": "^4.29.6"
+    }
+    代表安装成功 
+03. 如果是4.0版本以上的话，需要再安装一个webpack-cli脚手架  
+    npm i -D webpack-cli
+    npm isntall webpack webpack-cli --save-dev  
+    这两个命令都可以
+04.安装生产环境依赖
+   npm i lodash --save 早期的
+   npm i lodash -p 现在用的
+05 path.resolve(__dirname, './dist') 可以把相对路径转化成绝对路径
+
+06 npx webpack 运行一下webpack
+
+在html目录中添加 main.js 运行一下index.html 是否将 dom 节点中的文字添加到文件中去
+成功
+
+2.加载非js文件
+01 加载 CSS 文件  第一步： 安装 css 和 style 模块解析的依赖 style-loader 和 css-loader
+                         npm install --save-dev style-loader css-loader
+02 添加 css 解析的 loader
+在webpack.config.js中添加 loader模块  处理方式是从右至左的，后写的后加载
+
+03.添加sass-loader  npm i -D sass-loader node-sass
+ 
+ 04. 可以在package.json中通过修改Script标签中的build来修改创建命令，默认的是  npx webpack
+
+ 05.创建 Source Map  可以设置sourceMap来查询css的源文件地址
+
+ 06.下载压缩css和js的文件，同时使用（production）产品模式
+
+    
